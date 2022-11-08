@@ -1,0 +1,27 @@
+.grid-item {
+    background-color: lightpink;
+    border: 2px solid blue;
+    display: inline-grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: grey;
+    width: 300px;
+    height: 400px;
+}
+
+.item-num0 {
+    grid-column: 1 / span 2;
+}
+
+.display {
+    background-color: lightblue;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+    padding: 0;
+    margin: 0;
+}
