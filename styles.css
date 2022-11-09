@@ -4,6 +4,10 @@
     display: inline-grid;
     justify-items: center;
     align-items: center;
+    border-radius: 10px;
+    /* padding: 15px; */
+    margin: 5px;
+    gap: 20px;
 }
 
 .grid-container {
@@ -12,6 +16,9 @@
     background-color: grey;
     width: 300px;
     height: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 .item-num0 {
@@ -22,6 +29,12 @@
     background-color: lightblue;
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
-    padding: 0;
-    margin: 0;
+    padding-right: 8px;
+    margin: 5px;
+    color: black;
+    justify-items: right;
+    align-items: right;
+    font-size: 30px;
+
+    /* border: 5px solid black; */
 }
