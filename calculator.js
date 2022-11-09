@@ -56,29 +56,38 @@ const isOperator = (value) => {
 }
 
 const display = (arr) => {
-    displayScreen.forEach((i) => {
-        if (prevVal == '' || prevVal == 'REPLACE') {
-            if (arr.length > 0 && isOperator(arr[arr.length - 1]) != true) {
-                // i.innerHTML = arr[arr.length - 1]
-                i.innerHTML = roundDeci(arr[arr.length - 1])
 
-            }
-            else {
-                if (arr.length >= 2) {
-                    // i.innerHTML = arr[arr.length - 2]
-                    i.innerHTML = roundDeci(arr[arr.length - 2])
+    if (arr.length >= 1 && arr[arr.length - 1].length > 16) {
+        //print NaN
+        displayScreen.forEach((i) => {
+            i.innerHTML = 'NaN'
+        })
+    }
+    else {
+        displayScreen.forEach((i) => {
+            if (prevVal == '' || prevVal == 'REPLACE') {
+                if (arr.length > 0 && isOperator(arr[arr.length - 1]) != true) {
+                    // i.innerHTML = arr[arr.length - 1]
+                    i.innerHTML = roundDeci(arr[arr.length - 1])
 
                 }
                 else {
-                    i.innerHTML = 0
-                }
-            }
-        } else {
-            // i.innerHTML = prevVal
-            i.innerHTML = roundDeci(prevVal)
+                    if (arr.length >= 2) {
+                        // i.innerHTML = arr[arr.length - 2]
+                        i.innerHTML = roundDeci(arr[arr.length - 2])
 
-        }
-    })
+                    }
+                    else {
+                        i.innerHTML = 0
+                    }
+                }
+            } else {
+                // i.innerHTML = prevVal
+                i.innerHTML = roundDeci(prevVal)
+
+            }
+        })
+    }
 }
 
 const roundDeci = (num) => {
@@ -118,12 +127,7 @@ let deciFlag = 0;
 
 gridItems.forEach((item) => {
     item.addEventListener('click', (item) => {
-        // if (euqationReset == 1) {
-        //     let tempVal = mathEquation[mathEquation.length - 2]
-        //     mathEquation = []
-        //     mathEquation.push(tempVal)
-        //     euqationReset = 0;
-        // }
+
         let itemVal = item.target.getAttribute('value')
 
         // AC is clicked, clear everything

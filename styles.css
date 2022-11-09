@@ -1,24 +1,49 @@
+body {
+    font-family: 'Andale Mono';
+    background-color: rgb(197, 235, 248);
+}
+
+.title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .grid-item {
-    background-color: lightpink;
-    border: 2px solid blue;
+    background-color: pink;
+    border: 2px solid black;
     display: inline-grid;
     justify-items: center;
     align-items: center;
     border-radius: 10px;
-    /* padding: 15px; */
     margin: 5px;
     gap: 20px;
+    font-size: 20px;
+}
+
+
+.grid-item:active {
+    background-color: ed98a6;
+    transform: translate(2px);
+    box-shadow: 2px 2px #615f5f;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    background-color: grey;
+    background-color: #9c9a9a;
     width: 300px;
     height: 400px;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .item-num0 {
@@ -26,15 +51,13 @@
 }
 
 .display {
-    background-color: lightblue;
+    background-color: rgb(149, 212, 233);
     grid-column: 1 / span 4;
     grid-row: 1 / span 2;
-    padding-right: 8px;
+    padding-right: 2px;
     margin: 5px;
     color: black;
     justify-items: right;
     align-items: right;
     font-size: 30px;
-
-    /* border: 5px solid black; */
 }
